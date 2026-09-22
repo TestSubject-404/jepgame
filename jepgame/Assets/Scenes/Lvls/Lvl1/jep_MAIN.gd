@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	if is_on_floor():
 		has_dash = true
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor() or Input.is_action_just_pressed("ui_accept") and is_hovering or Input.is_action_just_pressed("ui_accept") and can_air_jump:
+	if Input.is_action_just_pressed("Jump") and is_on_floor() or Input.is_action_just_pressed("Jump") and is_hovering or Input.is_action_just_pressed("Jump") and can_air_jump:
 		velocity.y = JUMP_VELOCITY
 		can_air_jump = false
 	if Input.is_action_just_pressed("Dash") and not is_dashing and has_dash:
@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 		is_hovering = false
 		await get_tree().create_timer(0.5).timeout
 		can_air_jump = false
-	if Input.is_action_just_pressed("ui_accept") and is_on_wall():
+	if Input.is_action_just_pressed("Jump") and is_on_wall():
 		dash_direction = sign(velocity.x)
 		velocity.x = 450*dash_direction
 		velocity.y = -440

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://qj5ubjwnio6"]
 
-[ext_resource type="Script" uid="uid://dwyt3xoidvp6c" path="res://Assets/Scripts/coins.gd" id="1_665jj"]
-[ext_resource type="Texture2D" uid="uid://dbfom3hdfgt5q" path="res://Assets/Sprites/bullet3.jpg" id="1_tsooq"]
+[ext_resource type="Script" uid="uid://dwyt3xoidvp6c" path="res://Assets/Scripts/CoinHUD1.gd" id="1_hussw"]
+[ext_resource type="Texture2D" uid="uid://dbfom3hdfgt5q" path="res://Assets/Sprites/bullet3.jpg" id="2_2uisq"]
 
 [node name="coins" type="Control" unique_id=322276255]
 layout_mode = 3
@@ -10,13 +10,13 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 50.0
 offset_bottom = 50.0
-script = ExtResource("1_665jj")
+script = ExtResource("1_hussw")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1835183349]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_tsooq")
+texture = ExtResource("2_2uisq")
 
 [node name="Label" type="Label" parent="." unique_id=939377781]
 layout_mode = 0

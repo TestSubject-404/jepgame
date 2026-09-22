@@ -1,72 +1,73 @@
-[gd_scene format=3 uid="uid://did83kshvedfw"]
+[gd_scene format=3 uid="uid://cku7nqhkhs0qg"]
 
-[ext_resource type="Texture2D" uid="uid://dbfom3hdfgt5q" path="res://Assets/Sprites/bullet3.jpg" id="1_5ri3v"]
+[ext_resource type="Script" uid="uid://51whg7yamise" path="res://Assets/Scripts/Coin1.gd" id="1_jgy5l"]
+[ext_resource type="Texture2D" uid="uid://dbfom3hdfgt5q" path="res://Assets/Sprites/bullet3.jpg" id="1_wtcfe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3cq4b"]
-atlas = ExtResource("1_5ri3v")
+atlas = ExtResource("1_wtcfe")
 region = Rect2(5, 5, 5, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2a6wo"]
-atlas = ExtResource("1_5ri3v")
+atlas = ExtResource("1_wtcfe")
 region = Rect2(10, 5, 5, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u8fh2"]
-atlas = ExtResource("1_5ri3v")
+atlas = ExtResource("1_wtcfe")
 region = Rect2(10, 10, 5, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d1php"]
-atlas = ExtResource("1_5ri3v")
+atlas = ExtResource("1_wtcfe")
 region = Rect2(5, 10, 5, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pg3vb"]
-atlas = ExtResource("1_5ri3v")
+atlas = ExtResource("1_wtcfe")
 region = Rect2(0, 10, 5, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p6f3p"]
-atlas = ExtResource("1_5ri3v")
+atlas = ExtResource("1_wtcfe")
 region = Rect2(0, 5, 5, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_stj1k"]
-atlas = ExtResource("1_5ri3v")
+atlas = ExtResource("1_wtcfe")
 region = Rect2(0, 0, 5, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oqph3"]
-atlas = ExtResource("1_5ri3v")
+atlas = ExtResource("1_wtcfe")
 region = Rect2(5, 0, 5, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7aeab"]
-atlas = ExtResource("1_5ri3v")
+atlas = ExtResource("1_wtcfe")
 region = Rect2(10, 0, 5, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kqash"]
-atlas = ExtResource("1_5ri3v")
+atlas = ExtResource("1_wtcfe")
 region = Rect2(15, 0, 5, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0hck"]
-atlas = ExtResource("1_5ri3v")
+atlas = ExtResource("1_wtcfe")
 region = Rect2(15, 5, 5, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_umv75"]
-atlas = ExtResource("1_5ri3v")
+atlas = ExtResource("1_wtcfe")
 region = Rect2(15, 10, 5, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lep6d"]
-atlas = ExtResource("1_5ri3v")
+atlas = ExtResource("1_wtcfe")
 region = Rect2(15, 15, 5, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8epcp"]
-atlas = ExtResource("1_5ri3v")
+atlas = ExtResource("1_wtcfe")
 region = Rect2(10, 15, 5, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_emal8"]
-atlas = ExtResource("1_5ri3v")
+atlas = ExtResource("1_wtcfe")
 region = Rect2(5, 15, 5, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uqjyn"]
-atlas = ExtResource("1_5ri3v")
+atlas = ExtResource("1_wtcfe")
 region = Rect2(0, 15, 5, 5)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_cpdu7"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0e48y"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -122,20 +123,23 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_68va1"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_epypp"]
 radius = 19.646883
 
-[node name="Node2D" type="Node2D" unique_id=1510622308]
+[node name="Node2D" type="Node2D" unique_id=1049332573]
+script = ExtResource("1_jgy5l")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=583476417]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=673667587]
 position = Vector2(76.25, 43.25)
 scale = Vector2(6.5, 6.5)
-sprite_frames = SubResource("SpriteFrames_cpdu7")
+sprite_frames = SubResource("SpriteFrames_0e48y")
 animation = &"peg"
 autoplay = "peg"
 
-[node name="Area2D" type="Area2D" parent="." unique_id=868981666]
+[node name="Area2D" type="Area2D" parent="." unique_id=514423753]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1945413620]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1708021730]
 position = Vector2(76.25, 43.25)
-shape = SubResource("CircleShape2D_68va1")
+shape = SubResource("CircleShape2D_epypp")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

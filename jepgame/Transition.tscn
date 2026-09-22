@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://drkfhqqc17qon"]
+
+[ext_resource type="Script" uid="uid://d4yotv1xd0fb" path="res://transition.gd" id="1_ws5yv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enim4"]
+size = Vector2(22, 177)
+
+[node name="Transition" type="Node2D" unique_id=2036307315]
+script = ExtResource("1_ws5yv")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=529210308]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=948348382]
+visibility_layer = 16
+position = Vector2(1, 78.5)
+shape = SubResource("RectangleShape2D_enim4")
+debug_color = Color(0.22172183, 0.62716717, 0.3497433, 0.41960785)
+
+[connection signal="child_entered_tree" from="Area2D/CollisionShape2D" to="." method="_on_collision_shape_2d_child_entered_tree"]
