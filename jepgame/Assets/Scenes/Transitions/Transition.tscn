@@ -16,4 +16,5 @@ position = Vector2(1, 78.5)
 shape = SubResource("RectangleShape2D_enim4")
 debug_color = Color(0.22172183, 0.62716717, 0.3497433, 0.41960785)
 
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="child_entered_tree" from="Area2D/CollisionShape2D" to="." method="_on_collision_shape_2d_child_entered_tree"]

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c4l7b4np3q5u6"]
+
+[ext_resource type="Texture2D" uid="uid://ci1jsrufl2100" path="res://Assets/Sprites/NASA-Apollo8-Dec24-Earthrise.jpg" id="1_m625n"]
+[ext_resource type="Script" uid="uid://763rj3dnu63k" path="res://gameopenbutt.gd" id="2_wugcc"]
+
+[node name="Control" type="Control" unique_id=606745669]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_wugcc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=954188719]
+position = Vector2(578, 164)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_m625n")

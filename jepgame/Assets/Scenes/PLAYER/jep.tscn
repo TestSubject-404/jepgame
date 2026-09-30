@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bqdkfllaebjjg"]
+
+[ext_resource type="Script" uid="uid://t1f01bkwru4d" path="res://Assets/Scenes/Lvls/Lvl1/jep_MAIN.gd" id="1_6drhd"]
+[ext_resource type="Texture2D" uid="uid://ce0gopo17sgkk" path="res://Assets/Sprites/kitten.png" id="2_0uxh6"]
+[ext_resource type="Script" uid="uid://dow1kk56smycj" path="res://Assets/Scenes/Lvls/Lvl1/jepSPRITE.gd" id="3_0ih4d"]
+[ext_resource type="Script" uid="uid://dpyt47cso7udn" path="res://Assets/Scenes/PLAYER/area_2d.gd" id="4_0uxh6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmyqy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5abo"]
+size = Vector2(96, 20)
+
+[node name="JEP" type="Node2D" unique_id=1775703756]
+
+[node name="jep" type="CharacterBody2D" parent="." unique_id=110119291]
+position = Vector2(167, 35)
+script = ExtResource("1_6drhd")
+
+[node name="jepcolin" type="CollisionShape2D" parent="jep" unique_id=332160991]
+visibility_layer = 17
+position = Vector2(3, -3.0000005)
+scale = Vector2(6.3429728, 6.347498)
+shape = SubResource("RectangleShape2D_qmyqy")
+
+[node name="Camera2D" type="Camera2D" parent="jep" unique_id=1129921998]
+zoom = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="jep" unique_id=1836345972]
+position = Vector2(3.2599983, -3.2400055)
+scale = Vector2(-0.25, 0.25)
+texture = ExtResource("2_0uxh6")
+script = ExtResource("3_0ih4d")
+
+[node name="Area2D" type="Area2D" parent="jep" unique_id=220758255]
+script = ExtResource("4_0uxh6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jep/Area2D" unique_id=318731381]
+position = Vector2(121, 3)
+shape = SubResource("RectangleShape2D_r5abo")
+
+[connection signal="body_entered" from="jep/Area2D" to="jep" method="jepattack"]

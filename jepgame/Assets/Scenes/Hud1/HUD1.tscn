@@ -27,3 +27,9 @@ theme_override_colors/font_color = Color(0.62755674, 0.7822923, 0.3923174, 1)
 theme_override_font_sizes/font_size = 26
 text = "0"
 horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=1103024174]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "test"

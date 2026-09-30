@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://f3dgf2m4761n"]
+
+[ext_resource type="Texture2D" uid="uid://bv7k2nvijtl5n" path="res://Assets/Sprites/Bug.svg" id="1_hy61q"]
+[ext_resource type="Script" uid="uid://cauayf60bsy8b" path="res://Assets/Scenes/PLAYER/UGGIR.gd" id="2_rswup"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_enim4"]
+
+[node name="BUGGIEs" type="Node2D" unique_id=3097839]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=853033308]
+position = Vector2(93, 59)
+scale = Vector2(8.75, 5.916666)
+texture = ExtResource("1_hy61q")
+script = ExtResource("2_rswup")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D" unique_id=1223647819]
+shape = SubResource("CapsuleShape2D_enim4")
